@@ -6,6 +6,7 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    background: #b26cd3;
 }
 
 header{
@@ -25,7 +26,7 @@ nav.contenedor{
 }
 
 nav.logo{
-    height: 700px;
+    height: 800px;
 }
 
 .logo img{

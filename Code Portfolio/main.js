@@ -42,6 +42,7 @@ window.addEventListener("resize", function(){
 
 
 function inicio(){
+    document.getElementById("#uno").innerHTML = "";
     document.getElementById("#uno").innerHTML = "hola soy luis";
 }
 
