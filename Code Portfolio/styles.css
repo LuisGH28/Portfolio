@@ -71,8 +71,16 @@ nav a{
         flex-direction: column;
         transform: translateX(-100%);
     }
-
     .enlaces2{
         transform: translateX(0%);
     }
+}
+
+.contenido{
+    position: absolute;
+    border-left: 90px;
+    border-right: 90px;
+    border-top: 90px;
+    left: 90px;
+    top: 90px;
 }

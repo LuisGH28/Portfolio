@@ -39,3 +39,16 @@ window.addEventListener("resize", function(){
         }
     }
 })
+
+
+function inicio(){
+    document.getElementById("#uno").innerHTML = "hola soy luis";
+}
+
+function acercaDeMi(){
+    document.getElementById("#dos").innerHTML = "soy un programador movil junior";
+}
+
+function contacto(){
+    document.getElementById("#tres").innerHTML = "puedes buscarme en fb como luisgh";
+}
