@@ -1,16 +1,18 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
 }
 
 body{
     font-family: 'Open Sans', sans-serif;
-    background: #b26cd3;
+    background: #fff;
 }
 
 header{
-    background: #586994 ;
+    background: #ccd5ae ;
     width: 100%;
     box-shadow: 0 0 6px rgba(0, 0, 0, .5);
 }
@@ -26,20 +28,25 @@ nav.contenedor{
 }
 
 nav.logo{
-    height: 800px;
+    height: 70px;
 }
 
 .logo img{
     height: 100%;
     vertical-align: top;
-    background: #f2f2f2;
+    background: #ccd5ae;
 }
 
 nav a{
-    color: #f2f2f2;
+    color: #000;
     text-decoration: none;
     font-weight: 300;
     margin-right: 10px;
+}
+
+nav a:hover{
+    background-color: #faedcd;
+    text-decoration:underline;
 }
 
 .menu{
@@ -51,20 +58,20 @@ nav a{
 
 .menu img{
     vertical-align: top;
-    padding: 23px 0;
+    padding: 13px;
 }
 
-@media screen and (max-width:800px){
+@media  screen and (max-width:1000px) {
     .menu{
         display: block;
     }
 
     .enlaces{
         position: fixed;
-        background: #303A52;
+        background: #ccd5ae;
         left: 0;
-        top: 70px;
-        width: 70%;
+        top: 0px;
+        width: 40%;
         height: 100vh;
         display: flex;
         justify-content: space-evenly;
@@ -77,11 +84,24 @@ nav a{
     }
 }
 
-.contenido{
-    position: absolute;
-    border-left: 90px;
-    border-right: 90px;
-    border-top: 90px;
-    left: 90px;
-    top: 90px;
+main a{
+    text-decoration: none;
+    color: #0f0f0f;
 }
+
+h1{
+    font-size: 2rem;
+    line-height: 1.3em;
+}
+
+p{
+    margin-bottom: 1.6em;
+    line-height: 1.3em;
+}
+
+.container{
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+

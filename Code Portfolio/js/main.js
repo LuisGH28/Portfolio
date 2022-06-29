@@ -22,7 +22,7 @@ menu.addEventListener("click", function(){
 window.addEventListener("click", function(e){
     this.console.log(e.target)
     if(abierto){
-        if(e.target !== menuMenu){
+        if(e.target != menuMenu){
             toggleMenu();
             abierto = false;
         }
@@ -39,17 +39,3 @@ window.addEventListener("resize", function(){
         }
     }
 })
-
-
-function inicio(){
-    document.getElementById("#uno").innerHTML = "";
-    document.getElementById("#uno").innerHTML = "hola soy luis";
-}
-
-function acercaDeMi(){
-    document.getElementById("#dos").innerHTML = "soy un programador movil junior";
-}
-
-function contacto(){
-    document.getElementById("#tres").innerHTML = "puedes buscarme en fb como luisgh";
-}
