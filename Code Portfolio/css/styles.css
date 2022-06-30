@@ -46,7 +46,7 @@ nav a{
 
 nav a:hover{
     background-color: #faedcd;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .menu{
@@ -71,7 +71,7 @@ nav a:hover{
         background: #ccd5ae;
         left: 0;
         top: 0px;
-        width: 40%;
+        width: 30%;
         height: 100vh;
         display: flex;
         justify-content: space-evenly;
@@ -79,6 +79,7 @@ nav a:hover{
         flex-direction: column;
         transform: translateX(-100%);
     }
+
     .enlaces2{
         transform: translateX(0%);
     }
@@ -99,9 +100,61 @@ p{
     line-height: 1.3em;
 }
 
+.title{
+    text-align: center;
+    margin: 5%;
+    color: #626567;
+}
+
 .container{
     width: 85%;
     max-width: 850px;
     margin: 0 auto;
 }
 
+.top-bar{
+    max-width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4a373;
+}
+
+.hello{
+    display: flex;
+    background-color: #e9edc9 ;
+    text-align: center;
+    padding: 30px;
+    width: 100px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    margin: -100px -50px;
+    position: absolute;
+}
+
+.submission{
+    padding: 0 10px;
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 4px solid ;
+    width: 50ch;
+    animation: text 2s infinite steps(50),
+    blink .5s  step-end alternate;
+    overflow: hidden;
+    max-width: 225px;
+    position: absolute;
+    top:100%;
+    left: 40%;
+    margin: -200px -50px;
+}
+
+@keyframes text{
+    0% { width:  0;}
+}
+
+@keyframes blink{
+    50% { border-color: transparent;}
+}
