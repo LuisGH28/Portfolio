@@ -37,6 +37,10 @@ nav.logo{
     background: #ccd5ae;
 }
 
+.logo img:hover{
+    background-color: #e9edc9;
+}
+
 nav a{
     color: #000;
     text-decoration: none;
@@ -85,33 +89,6 @@ nav a:hover{
     }
 }
 
-main a{
-    text-decoration: none;
-    color: #0f0f0f;
-}
-
-h1{
-    font-size: 2rem;
-    line-height: 1.3em;
-}
-
-p{
-    margin-bottom: 1.6em;
-    line-height: 1.3em;
-}
-
-.title{
-    text-align: center;
-    margin: 5%;
-    color: #626567;
-}
-
-.container{
-    width: 85%;
-    max-width: 850px;
-    margin: 0 auto;
-}
-
 .top-bar{
     max-width: 100%;
     height: 500px;
@@ -136,25 +113,86 @@ p{
 
 .submission{
     padding: 0 10px;
+
     display: block;
     font-family: monospace;
     white-space: nowrap;
-    border-right: 4px solid ;
-    width: 50ch;
-    animation: text 2s infinite steps(50),
-    blink .5s  step-end alternate;
-    overflow: hidden;
+    border-right: 4px solid;
+    width: 29ch;
+    
+    animation: typing 2s steps(29) infinite, 
+        blink .5s  step-end alternate;
+    overflow:hidden;
+
     max-width: 225px;
     position: absolute;
     top:100%;
     left: 40%;
-    margin: -200px -50px;
+    margin: -200px 0px;
 }
 
-@keyframes text{
-    0% { width:  0;}
+@keyframes typing {
+    from { width: 0}
+}
+    
+@keyframes blink {
+    50% { border-color: transparent}
 }
 
-@keyframes blink{
-    50% { border-color: transparent;}
+main a{
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+h1{
+    font-size: 2rem;
+    line-height: 1.3em;
+}
+
+p{
+    margin-bottom: 1.6em;
+    line-height: 1.3em;
+    margin: 5%;
+}
+
+.top{
+    text-align: center;
+}
+
+.container{
+    width: 85%;
+    max-width: 850px;
+    margin: 5% auto;
+}
+
+.presentation{
+    background-color: transparent;
+    max-width: 250px;
+    display: block;
+    margin: 0px auto;
+}
+
+.technologies{
+    background-color: #ffb4a2;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.plataforms{
+    padding: 40px;
+}
+
+.top-bar_about{
+    background-image: url(/Code\ Portfolio/images/cat.jpg) !important;
+	background-size: cover;
+    height: 500px;
+    color: #fff;
+}
+
+.title--bar{
+    background-color: red;
+    margin: auto 5%;
+    width: 25%;
+    
 }
