@@ -191,8 +191,10 @@ p{
 }
 
 .title--bar{
-    background-color: red;
     margin: auto 5%;
-    width: 25%;
-    
+    width: 30%;
+    height:90%;
+    font-size: 1.5rem;
+    padding: 9% 0;
+    color: #03071e;
 }
