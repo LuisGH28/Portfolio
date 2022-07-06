@@ -163,6 +163,7 @@ p{
     width: 85%;
     max-width: 850px;
     margin: 5% auto;
+    clear: both;
 }
 
 .presentation{
@@ -197,4 +198,24 @@ p{
     font-size: 1.5rem;
     padding: 9% 0;
     color: #03071e;
+}
+
+.job{
+    margin: 0;
+    padding: 40px;
+}
+
+.story{
+    margin: 2% 10%;
+    max-width: 100%;
+}
+.story img{
+    float: left;
+    width:100%;
+    max-width:400px;
+}
+
+.text--story{
+    padding: 10% 0;
+    color: #626567;
 }
