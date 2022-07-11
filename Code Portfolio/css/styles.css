@@ -108,7 +108,7 @@ nav a:hover{
     top: 50%;
     left: 50%;
     margin: -100px -50px;
-    position: absolute;
+    position: static;
 }
 
 .submission{
@@ -182,6 +182,24 @@ p{
 
 .plataforms{
     padding: 40px;
+}
+
+.specialty{ 
+    max-width: 100%;
+}
+
+.specialty img{
+    float: left;
+    width:100%;
+    max-width:600px;
+    
+}
+
+.information{
+    margin: 0 10%;
+    float: left;
+    padding: 10% 5%;
+    color: #626567;
 }
 
 .top-bar_about{
