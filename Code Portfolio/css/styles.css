@@ -66,6 +66,7 @@ nav a:hover{
 }
 
 @media  screen and (max-width:1000px) {
+
     .menu{
         display: block;
     }
@@ -192,16 +193,102 @@ p{
     float: left;
     width:100%;
     max-width:600px;
-    
+    margin: 0 5% 5% 0;
 }
 
 .information{
     margin: 0 10%;
-    float: left;
-    padding: 10% 5%;
+    padding: 10% 5%; 
     color: #626567;
+    display: inline;
 }
 
+.goals{
+    padding: 4% 0;
+    max-width: 100%;
+}
+
+.goals img{
+    float: right;
+    width:100%;
+    max-width:600px;
+    margin: 0 0 0 0;
+}
+
+.portfolio{
+    background-color: #ffb4a2;
+    height: 350px;
+    width: 100%;
+    text-align: center;
+    padding: 100px;
+    margin: 0;
+}
+
+.btn--see{
+    border: 1px solid #000;
+    background-color: #ffafcc;
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    float: right;
+    margin: 0;
+}
+
+.btn--see:hover{
+    background-color: #2a9d8f;
+    text-decoration: underline;
+}
+
+.btn--know__me{
+    border: 1px solid #000;
+    background-color: #ffafcc;
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    padding: 14px;
+    float: left;
+}
+
+.btn--know__me:hover{
+    background-color: #2a9d8f;
+    text-decoration: underline;
+}
+
+.colaborations{
+    margin: 0;
+    text-align: center;
+    height: 300px;
+    padding: 25px;
+}
+
+.contact--with__me {
+    border: 5px solid #f08080;
+    width: 250px;
+    height: 50px;
+    padding: 5px;
+    margin: 0 40%;
+    cursor: pointer;
+    font-size: 20px;
+    float: none;
+    position: center;
+}
+
+.contact--with__me a{
+    color: #f08080;
+
+}
+.contact--with__me:hover{
+    background-color: #f08080;
+}
+
+.contact--with__me:hover a{
+    color: #fff;
+}
+
+/*Style of page about*/
 .top-bar_about{
     background-image: url(/Code\ Portfolio/images/cat.jpg) !important;
 	background-size: cover;
