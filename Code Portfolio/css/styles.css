@@ -8,7 +8,22 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
-    background: #fff;
+    background-color: #fff;
+}
+
+.wrapper{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #fff;
+    display: grid;
+    place-items: center;
+    transition: 2.5s, visibility 10s;
+}
+
+.fade{
+    opacity: 0;
+    visibility: hidden;
 }
 
 header{
@@ -113,11 +128,8 @@ nav a:hover{
 }
 
 .submission{
-    padding: 0 10px;
-
     display: block;
     font-family: monospace;
-    white-space: nowrap;
     border-right: 4px solid;
     width: 29ch;
     
@@ -132,12 +144,49 @@ nav a:hover{
     margin: -200px 0px;
 }
 
-@keyframes typing {
-    from { width: 0}
+.typewriter-effect {
+    padding: 0 10px;
+
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+    white-space: nowrap;
+
+    position: absolute;
+    top:100%;
+    left: 40%;
+    margin: -200px -150px;
 }
-    
-@keyframes blink {
-    50% { border-color: transparent}
+
+.typewriter-effect > .text{
+    max-width: 0;
+    animation: typing 3s steps(var(--characters)) infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.typewriter-effect:after{
+    content: " |";
+    animation: blink 1s infinite;
+    animation-timing-function: step-end;
+}
+
+@keyframes typing{
+    75%,
+    100%{
+        max-width: calc(var(--characters) * 1ch);
+    }
+}
+
+@keyframes blink{
+    0%,
+    75%,
+    100%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0;
+    }
 }
 
 main a{

@@ -1,3 +1,11 @@
+const fadeOut = () => {
+    const loaderWrapper = 
+    document.querySelector('.wrapper');
+    loaderWrapper.classList.add('fade');
+}
+
+window.addEventListener('load', fadeOut);
+
 const enlaces = document.getElementsByClassName("enlaces")[0];
 const menu = document.getElementsByClassName("menu")[0];
 const menuMenu = document.getElementById("menu");
@@ -40,3 +48,8 @@ window.addEventListener("resize", function(){
     }
 })
 
+const typeWriter = document.getElementById("typewriter-text");
+const text = "Mi nombre es Luis Gonzalez, Soy un desarrollador movil.";
+
+typeWriter.innerHTML = text;
+typeWriter.style.setProperty("--characters", text.length);
