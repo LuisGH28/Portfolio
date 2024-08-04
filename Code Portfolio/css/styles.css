@@ -103,6 +103,7 @@ nav a:hover{
     .enlaces2{
         transform: translateX(0%);
     }
+
 }
 
 .top-bar{
@@ -114,18 +115,21 @@ nav a:hover{
     background-color: #d4a373;
 }
 
-.hello{
+.hello {
     display: flex;
-    background-color: #e9edc9 ;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9edc9;
     text-align: center;
-    padding: 30px;
+    padding: 2rem;
     width: 100px;
     height: 80px;
-    top: 50%;
+    position: absolute;
     left: 50%;
-    margin: -100px -50px;
-    position: static;
+    transform: translate(-50%, -50%);
+    margin-bottom: 90px;
 }
+
 
 .submission{
     display: block;
@@ -144,49 +148,20 @@ nav a:hover{
     margin: -200px 0px;
 }
 
-.typewriter-effect {
-    padding: 0 10px;
-
-    display: flex;
-    justify-content: center;
-    font-family: monospace;
-    white-space: nowrap;
-
-    position: absolute;
-    top:100%;
-    left: 40%;
-    margin: -200px -150px;
-}
-
-.typewriter-effect > .text{
-    max-width: 0;
-    animation: typing 3s steps(var(--characters)) infinite;
+.typewriter {
+    font-size: 24px;
     white-space: nowrap;
     overflow: hidden;
+    border-right: 2px solid black;
+    animation: blink-caret 0.75s step-end infinite;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-.typewriter-effect:after{
-    content: " |";
-    animation: blink 1s infinite;
-    animation-timing-function: step-end;
-}
-
-@keyframes typing{
-    75%,
-    100%{
-        max-width: calc(var(--characters) * 1ch);
-    }
-}
-
-@keyframes blink{
-    0%,
-    75%,
-    100%{
-        opacity: 1;
-    }
-    25%{
-        opacity: 0;
-    }
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: transparent; }
 }
 
 main a{
@@ -268,12 +243,13 @@ p{
     height: 350px;
     width: 100%;
     text-align: center;
-    padding: 70px;
+    padding: 30px;
     margin: 0;
 }
 
 .fa-briefcase{
     font-size: 35px;
+    position: absolute;
 }
 
 .btn--see{

@@ -48,8 +48,44 @@ window.addEventListener("resize", function(){
     }
 })
 
-const typeWriter = document.getElementById("typewriter-text");
-const text = "Mi nombre es Luis Gonzalez, Soy un desarrollador movil.";
+document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.getElementById('text');
+    const textArray = [
+        'Mi nombre es Luis González, ',
+        'Mobile developer, ',
+        'Machine Learning developer, ',
+        'Linuxero, ',
+        'Escritor en mis tiempos libres, ',
+        'Amante de los michis'
+    ];
+    let currentText = '';
+    let currentIndex = 0;
+    let arrayIndex = 0;
+    let isAdding = true;
+    const delay = 100; // Delay between characters
+    const pause = 2000; // Pause between sections
+    const clearPause = 500; // Pause before clearing text
 
-typeWriter.innerHTML = text;
-typeWriter.style.setProperty("--characters", text.length);
+    function type() {
+        if (isAdding) {
+            if (currentIndex < textArray[arrayIndex].length) {
+                currentText += textArray[arrayIndex].charAt(currentIndex);
+                textElement.innerHTML = currentText;
+                currentIndex++;
+                setTimeout(type, delay);
+            } else {
+                isAdding = false;
+                setTimeout(() => {
+                    textElement.innerHTML = '';
+                    currentText = '';
+                    currentIndex = 0;
+                    arrayIndex = (arrayIndex + 1) % textArray.length;
+                    isAdding = true;
+                    setTimeout(type, clearPause);
+                }, pause);
+            }
+        }
+    }
+
+    type();
+});
