@@ -5,23 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luigi</title>
-    <link rel="stylesheet" href="/Code Portfolio/css/styles.css" />
+    <link rel="stylesheet" href="/Code Portfolio/css/portfolio.css" />
     <link rel="https://fonts.googleapis.com/css?family=Open+Sans: 300,400display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/560becc4a6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav class="contenedor">
             <div class="logo">
-                <a href="/Code Portfolio/pages/index.html">
-                    <img src="/Code Portfolio/images/Logo.png" alt="Logo"/>
-                </a>
+                <a href="/Code Portfolio/index.html">
+                    <img src="/Code Portfolio/assets/img/Logo.png" alt="Logo"/>
+                </a>            
             </div>
 
             <div class="enlaces">
-                <a href="/Code Portfolio/pages/index.html">Inicio</a>
-                <a href="/Code Portfolio/pages/about.html">Acerca de Mi</a>
-                <a href="/Code Portfolio/pages/portfolio.html">Portfolio</a>
-                <a href="/Code Portfolio/pages/contact.html">Contacto</a>
+                <a href="/Code Portfolio/index.html">Inicio</a>
+                <a href="/Code Portfolio/views/about.html">Acerca de Mi</a>
+                <a href="/Code Portfolio/views/portfolio.html">Portfolio</a>
+                <a href="/Code Portfolio/views/contact.html">Contacto</a>
             </div>
 
             <div class="menu">
@@ -29,7 +31,37 @@
             </div>
         </nav>
     </header>
-   
+
+    <main class="projects-container">
+
+        <h2 class="title">Algunos de los proyectos que he laborado son los siguientes:</h2>
+        <div class="project">
+            <img src="/Code Portfolio/assets/img/cat-typing.gif" alt="Proyecto 1">
+            <div class="description">Descripción del Proyecto 1</div>
+        </div>
+        <div class="project">
+            <img src="project2.jpg" alt="Proyecto 2">
+            <div class="description">Descripción del Proyecto 2</div>
+        </div>
+        <div class="project">
+            <img src="project3.jpg" alt="Proyecto 3">
+            <div class="description">Descripción del Proyecto 3</div>
+        </div>
+        <!-- Agrega más proyectos según sea necesario -->
+    </main>
+    <footer class="main--footer">
+        <section class="content--footer">
+            <div class="navigation">
+                <a href="/Code Portfolio/index.html">Inicio</a>
+                <a href="/Code Portfolio/views/about.html">Acerca</a>
+                <a href="/Code Portfolio/views/portfolio.html">Portfolio</a>
+                <a href="/Code Portfolio/views/contact.html">Contacto</a>
+            </div>
+            <div class="icons">
+                <a href="https://github.com/LuisGH28" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </section>
+    </footer>
     <script src="/Code Portfolio/js/main.js"></script>
 </body>
 </html>
