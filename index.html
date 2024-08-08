@@ -17,10 +17,10 @@
                     </a>
                 </div>
                 <div class="enlaces">
-                    <a href="/index.html">Inicio</a>
-                    <a href="/views/about.html">Acerca de Mi</a>
-                    <a href="/views/portfolio.html">Portfolio</a>
-                    <a href="/views/contact.html">Contacto</a>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#about">Acerca de Mi</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contacto</a>
                 </div>
                 <div class="menu">
                     <img src="../assets/img/menu-regular-48.png" id="menu" />
@@ -33,7 +33,7 @@
                 <div id="text"></div>
             </div>
         </div>
-        <main class="content">
+        <main class="content" id="inicio">
             <section class="container">
                 <br/>
                 <p class="top" style="color: #626567;">Desarrollador de Apliaciones Android y Web.</p>
@@ -43,7 +43,7 @@
                 </p>
                 <img class="presentation" src="../assets/img/猫.png" alt="Logo"/>
             </section>
-            <div class="technologies">
+            <div class="technologies" id="about">
                 <p class="plataforms">Android  |  Web</p>
             </div>
             <section class="main-content">
@@ -78,9 +78,8 @@
             <section class="contact--with--me">
                 <p> ¿Quieres ver mis trabajos? </p>
 
-                <a href="../views/portfolio.html" class="btn--portfolio"> Ver portafolio</a>
-                <a href="../views/about.html" class="btn--know--me">Conoceme mejor</a>
-                
+                <a href="#portfolio" class="btn--portfolio"> Ver portafolio</a>
+                <a href="#about" class="btn--know--me">Conoceme mejor</a>
             </section>
             <section class="experience">
                 <div class="experiencee-tex">
@@ -90,20 +89,77 @@
                 </div>
                 <img src="../assets/img/tux.jpeg" alt="Tux">
             </section>
+            <div class="technologies">
+                <p class="plataforms" id="portfolio">Proyectos elaborados</p>
+            </div>
+            <section class="filter-container">
+                <button class="filter-button">🔍 Filtrar</button>
+                <div class="filter-options">
+                    <div class="filter-option" data-filter="all">Mostrar Todo</div>
+                    <div class="filter-option" data-filter="kotlin">Kotlin</div>
+                    <div class="filter-option" data-filter="figma">Figma</div>
+                </div>
+            </section>
+            <section class="cards-container">
+                <div class="card" data-tags="kotlin">
+                    <img src="kotlin-image.jpg" alt="Kotlin">
+                    <div class="description">Descripción de Kotlin</div>
+                </div>
+                <div class="card" data-tags="kotlin">
+                    <img src="kotlin-image2.jpg" alt="Kotlin">
+                    <div class="description">Otra descripción de Kotlin</div>
+                </div>
+                <div class="card" data-tags="figma">
+                    <img src="figma-image.jpg" alt="Figma">
+                    <div class="description">Descripción de Figma</div>
+                </div>
+            </section>
+
+            <div class="technologies">
+                <p class="plataforms">Contacta conmigo :)</p>
+            </div>
+            <section class="content" id="contact">
+                <div class="title">
+                    <h1>quieres contactarme</h1>
+                    <p>prueba esto</p>
+                </div>
+                <div class="contact-container">
+                    <form action="mailto:luisgnzhdz@gmail.com" method="post" enctype="text/plain">
+                        <label for="name">Nombre:</label><br>
+                        <input type="text" id="name" name="name" required><br><br>
+        
+                        <label for="email">Correo Electrónico:</label><br>
+                        <input type="email" id="email" name="email" required><br><br>
+        
+                        <label for="subject">Asunto:</label><br>
+                        <input type="text" id="subject" name="subject" required><br><br>
+        
+                        <label for="message">Mensaje:</label><br>
+                        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        
+                        <input type="submit" value="Enviar">
+                    </form>
+                    <div class="contact-info">
+                        <!-- Espacio para poner texto adicional -->
+                        <p>Aquí puedes agregar tu texto adicional.</p>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="main--footer">
             <section class="content--footer">
-                <div class="navigation">
-                    <a href="/index.html">Inicio</a>
-                    <a href="/views/about.html">Acerca</a>
-                    <a href="/views/portfolio.html">Portfolio</a>
-                    <a href="/views/contact.html">Contacto</a>
+                <div class="enlaces">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#about">Acerca de Mi</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contacto</a>
                 </div>
                 <div class="icons">
                     <a href="https://github.com/LuisGH28" target="_blank"><i class="fa-brands fa-github"></i></a>
                 </div>
             </section>
         </footer>
+        <button class="back-to-top" id="backToTop">⬆️</button>
         <script src="/js/main.js"></script>
     </body>
 </html>
