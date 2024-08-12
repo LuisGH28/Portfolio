@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Luigi</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/560becc4a6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="contenedor">
+                <div class="logo">
+                    <a href="/index.html">
+                        <img src="../assets/img/Logo.webp" alt="Logo"/>
+                    </a>
+                </div>
+                <div class="enlaces">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#about">Acerca de Mi</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contacto</a>
+                    
+
+                </div>
+                <div class="menu">
+                    <img src="../assets/img/menu-regular-48.png" id="menu" />
+                </div>
+            </nav>
+        </header>
+        <div class="top-bar">   
+            <span class="hello">Hola, </span>
+            <div class="typewriter">
+                <div id="text"></div>
+            </div>
+        </div>
+        <main class="content" id="inicio">
+            <section class="container">
+                <br/>
+                <p class="top" style="color: #626567;">Desarrollador de Apliaciones Android y Web.</p>
+                <h1 style="text-align: center;">MI NOMBRE ES LUIS GONZÁLEZ, <br/> MOBILE DEVELOPER.</h1>
+                <p class="top">
+                    Crecer profesionalmente en la industria del desarrollo de software es una meta que con el pasar de los años he ido consiguiendo. Cada día, me desafío a mí mismo para aprender nuevas habilidades, explorar nuevas tecnologías y superar obstáculos.
+                </p>
+                <img class="presentation" src="../assets/img/猫.webp" alt="Logo"/>
+            </section>
+            <div class="technologies" id="about">
+                <p class="plataforms">Android  |  Web</p>
+            </div>
+            <section class="main-content">
+                <section class="goals">
+                    <img src="../assets/img/cv.webp" alt="Profile Picture"/>
+                    <div class="info">
+                        <div class="left-column">
+                            <h2>Soy Desarrollador de aplicaciones Android.</h2>
+                        </div>
+                        <div class="right-column">
+                            <h3>Aplicaciones completas desde cero</h3>
+                            <p>Mi camino comienza con el desarrollo de pequeñas aplicaciones, las cuales me han dado la oportunidad de mejorar cada día más y mantenerme siempre actualizado.  </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="experience">
+                    <div class="experience-text">
+                        <h3>Mi sueño en proceso de volverse realidad</h3>
+                        <p>En 2022 comienza mi travesia por el mundo del desarrollo, con pequeños proyectos personales, sin mencionar que la UAEM comence con el desarrollo web y la administración de servidores en base linux, al igual que en el SAT donde emprendí mi camino en el ambito de redes, automatización y capaciatación en linux.</p>
+                        <ul>
+                            <li>Kotlin | Java: 2 años de experiencia.</li>
+                            <li>Unity: 6 meses de experiencia.</li>
+                            <li>JavaScript: 6 meses de experiencia.</li>
+                            <li>Linux: 2 años de experiencia.</li>
+                            <li>Python: 1 año de experiencia.</li>
+                            <li>C | C++: 1 año de experiencia.</li>
+                        </ul>
+                    </div>
+                    <img src="../assets/img/keyboard-cat.webp" alt="Coding">
+                </section>
+            </section>
+            <section class="contact--with--me">
+                <p> ¿Quieres ver mis trabajos? </p>
+
+                <a href="#portfolio" class="btn--portfolio"> Ver portafolio</a>
+                <a href="#about" class="btn--know--me">Conoceme mejor</a>
+
+                <a href="https://github.com/LuisGH28" class="btn--know--me">Github</a>
+            </section>
+            <section class="experience">
+                <div class="experiencee-tex">
+                    <h3>Mi historia con el software libre: Pasión, aprendizaje y desarrollo</h3>
+                    <p>En 2020 descubrí el software libre y desde ese momento he recorrido un largo camino. Gracias a mi formación y experiencia, he pasado de ser un simple usuario a desempeñarme como administrador de sistemas Linux, capacitando a otros y contribuyendo activamente a la comunidad.</p>
+                    <p>Actualmente, estoy desarrollando un sistema operativo basado en Arch Linux como proyecto personal, con el objetivo de explorar las posibilidades de personalización y optimización del núcleo Linux</p>
+                </div>
+                <img src="../assets/img/tux.webp" alt="Tux">
+            </section>
+            <div class="technologies">
+                <p class="plataforms" id="portfolio">Proyectos elaborados</p>
+            </div>
+            <section class="filter-container">
+                <button class="filter-button">🔍 Filtrar</button>
+                <div class="filter-options">
+                    <div class="filter-option" data-filter="all">Mostrar Todo</div>
+                    <div class="filter-option" data-filter="kotlin">Kotlin</div>
+                    <div class="filter-option" data-filter="shell">Shell</div>
+                    <div class="filter-option" data-filter="figma">Figma</div>
+                    <div class="filter-option" data-filter="python">Python</div>
+                </div>
+            </section>
+            <section class="cards-container">
+                <a href="https://github.com/LuisGH28/Pokemon-on-kotlin.git" class="card" data-tags="kotlin">
+                    <img src="/assets/img/pikachu.webp" alt="Kotlin">
+                    <div class="description">Pequeño juego de pokemon, demostrando los conocimientos de POO en kotlin</div>
+                </a>
+                <a href="https://github.com/LuisGH28/File-Compressor.git" class="card" data-tags="shell">
+                    <img src="/assets/img/shell.webp" alt="Shell">
+                    <div class="description">Automatización para comprimir archivos en linux</div>
+                </a>
+                <a href="https://www.figma.com/proto/74AdPjboMDPgAIzeZQv543/Walker-Coffe-App-Movil?node-id=0-1&t=WO0zPpLQrnmix2zZ-1" class="card" data-tags="figma">
+                    <img src="/assets/img/walkercoffe.webp" alt="Figma">
+                    <div class="description">Prototipo para una aplicación de una cafeteria</div>
+                </a>
+                <a href="https://github.com/LuisGH28/TattooWorld" class="card" data-tags="python">
+                    <img src="/assets/img/puntoVenta.webp" alt="Python">
+                    <div class="description">Punto de venta para un establecimientos de tatuajes</div>
+                </a>
+                <a href="https://github.com/LuisGH28/installArch" class="card" data-tags="shell">
+                    <img src="/assets/img/archlinux.webp" alt="Shell">
+                    <div class="description">Script que ayuda a la instalación del Sistema Operativo ArchLinux</div>
+                </a>
+            </section>
+
+            <div class="technologies">
+                <p class="plataforms">Contacta conmigo :)</p>
+            </div>
+            <section class="content" id="contact">
+                <div class="title">
+                    <h1>¿Quieres contactarme?</h1>
+                </div>
+                <div class="contact-container">
+                    <form action="mailto:luisgnzhdz@gmail.com" method="post" enctype="text/plain">
+                        <label for="name">Nombre:</label><br>
+                        <input type="text" id="name" name="name" required><br><br>
+        
+                        <label for="email">Correo Electrónico:</label><br>
+                        <input type="email" id="email" name="email" required><br><br>
+        
+                        <label for="subject">Asunto:</label><br>
+                        <input type="text" id="subject" name="subject" required><br><br>
+        
+                        <label for="message">Mensaje:</label><br>
+                        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        
+                        <input type="submit" value="Enviar">
+                    </form>
+                    
+                </div>
+            </section>
+        </main>
+        <footer class="main--footer">
+            <section class="content--footer">
+                <div class="enlaces">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#about">Acerca de Mi</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+                <div class="icons">
+                    <a href="https://github.com/LuisGH28" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </section>
+        </footer>
+        <button class="back-to-top" id="backToTop">⬆️</button>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
