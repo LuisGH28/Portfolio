@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luis González — Desarrollador | Portafolio</title>
+    <meta
+      name="description"
+      content="Portafolio de Luis González (LuisGH28): Backend Java/Spring Boot, Android (Kotlin), Flutter, Automatización en Linux/Python e IA aplicada."
+    />
+    <meta name="author" content="Luis González" />
+    <link rel="icon" href="/src/assets/img/logo_icon.webp" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f5f7ff",
+                100: "#e9edff",
+                200: "#d3dafe",
+                300: "#b5bfff",
+                400: "#8f9bff",
+                500: "#6f7dff",
+                600: "#4f5fff",
+                700: "#3b49db",
+                800: "#2f3aa8",
+                900: "#273082",
+              },
+            },
+            boxShadow: { soft: "0 10px 30px -10px rgba(0,0,0,0.25)" },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <header
+      class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200 dark:bg-slate-900/70 dark:border-slate-800"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16">
+          <a href="#inicio" class="flex items-center gap-2 font-semibold">
+            <img class="w-9 h-9 rounded-full" src="assets/img/logos/logo_icon_white.webp" alt="Avatar" />
+            <span>Luis González</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#inicio" class="hover:text-brand-700" data-i18n="nav.home">Inicio</a>
+            <a href="#servicios" class="hover:text-brand-700" data-i18n="nav.services">Servicios</a>
+            <a href="#proyectos" class="hover:text-brand-700" data-i18n="nav.projects">Proyectos</a>
+            <a href="#articulos" class="hover:text-brand-700" data-i18n="nav.articles">Artículos</a>
+            <a href="#sobre-mi" class="hover:text-brand-700" data-i18n="nav.about">Sobre mí</a>
+            <a href="#contacto" class="hover:text-brand-700" data-i18n="nav.contact">Contacto</a>
+
+            <div
+              class="hidden md:flex items-center gap-1 border border-slate-200 rounded-xl px-1 py-0.5 dark:border-slate-700"
+            >
+              <button
+                class="lang-btn px-2 py-1 rounded-lg aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white"
+                data-lang="es"
+                aria-pressed="true"
+              >
+                ES
+              </button>
+              <button
+                class="lang-btn px-2 py-1 rounded-lg aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white"
+                data-lang="en"
+                aria-pressed="false"
+              >
+                EN
+              </button>
+            </div>
+
+            <div
+              class="hidden md:flex items-center gap-1 border border-slate-200 rounded-xl px-1 py-0.5 ml-2 dark:border-slate-700"
+            >
+              <button
+                class="theme-btn px-2 py-1 rounded-lg aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white"
+                data-theme="light"
+                aria-pressed="false"
+              >
+                ☀️
+              </button>
+              <button
+                class="theme-btn px-2 py-1 rounded-lg aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white"
+                data-theme="dark"
+                aria-pressed="false"
+              >
+                🌙
+              </button>
+            </div>
+
+            <a
+              href="/public/Cv_GHLA.pdf"
+              class="inline-flex items-center gap-2 bg-brand-600 text-white px-3 py-1.5 rounded-xl hover:bg-brand-700 shadow-soft"
+              data-i18n="nav.downloadCV"
+              >Descargar CV</a
+            >
+          </nav>
+
+          <button
+            id="menuBtn"
+            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+          >
+            <span class="sr-only">Abrir menú</span>
+            <svg
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 grid gap-3 text-sm">
+          <a href="#inicio" class="py-1" data-i18n="nav.home">Inicio</a>
+          <a href="#servicios" class="py-1" data-i18n="nav.services">Servicios</a>
+          <a href="#proyectos" class="py-1" data-i18n="nav.projects">Proyectos</a>
+          <a href="#articulos" class="py-1" data-i18n="nav.articles">Artículos</a>
+          <a href="#sobre-mi" class="py-1" data-i18n="nav.about">Sobre mí</a>
+          <a href="#contacto" class="py-1" data-i18n="nav.contact">Contacto</a>
+
+          <div class="flex items-center gap-2">
+            <button
+              class="lang-btn flex-1 px-2 py-1 rounded-lg border aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white dark:border-slate-700"
+              data-lang="es"
+              aria-pressed="true"
+            >
+              ES
+            </button>
+            <button
+              class="lang-btn flex-1 px-2 py-1 rounded-lg border aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white dark:border-slate-700"
+              data-lang="en"
+              aria-pressed="false"
+            >
+              EN
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button
+              class="theme-btn flex-1 px-2 py-1 rounded-lg border aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white dark:border-slate-700"
+              data-theme="light"
+              aria-pressed="false"
+            >
+              ☀️
+            </button>
+            <button
+              class="theme-btn flex-1 px-2 py-1 rounded-lg border aria-[pressed=true]:bg-brand-600 aria-[pressed=true]:text-white dark:border-slate-700"
+              data-theme="dark"
+              aria-pressed="false"
+            >
+              🌙
+            </button>
+          </div>
+
+          <a
+            href="./CV-LuisAngelGonzalez.pdf"
+            class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white px-3 py-2 rounded-xl hover:bg-brand-700"
+            >Descargar CV</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="fade-up">
+              <span
+                class="inline-flex items-center gap-2 text-brand-700 font-medium bg-brand-50 px-3 py-1 rounded-full dark:text-brand-100 dark:bg-brand-800/30"
+                data-i18n="hero.badge"
+                >Disponible para proyectos freelance</span
+              >
+              <h1
+                class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white"
+                data-i18n="hero.title"
+              >
+                Backend Java, Apps Android/Flutter & Automatización
+              </h1>
+              <p
+                class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed"
+                data-i18n="hero.subtitle"
+              >
+                Ayudo a startups y pymes a construir <strong>APIs con Java/Spring Boot</strong>,
+                <strong>apps móviles (Kotlin/Flutter)</strong> y
+                <strong>automatizaciones en Linux/Python</strong>. También exploro
+                <strong>IA aplicada</strong> para resolver problemas reales.
+              </p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="#contacto"
+                  class="inline-flex items-center gap-2 bg-brand-600 text-white px-5 py-3 rounded-xl hover:bg-brand-700 shadow-soft"
+                  data-i18n="hero.ctaQuote"
+                  >Solicitar cotización</a
+                >
+                <a
+                  href="#proyectos"
+                  class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-600 dark:hover:border-slate-500"
+                  data-i18n="hero.ctaProjects"
+                  >Ver proyectos</a
+                >
+              </div>
+              <div class="mt-6 flex items-center gap-4 text-sm text-slate-500">
+                <a
+                  class="hover:text-slate-700 dark:hover:text-slate-200"
+                  href="https://github.com/LuisGH28"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <a
+                  class="hover:text-slate-700 dark:hover:text-slate-200"
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  >LinkedIn</a
+                >
+                <a
+                  class="hover:text-slate-700 dark:hover:text-slate-200"
+                  href="mailto:luisgnzhdz@gmail.com"
+                  >Email</a
+                >
+              </div>
+            </div>
+
+            <div class="fade-up delay-2">
+              <div class="relative mx-auto max-w-md">
+                <div
+                  class="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-brand-200 to-brand-400 blur-2xl opacity-40"
+                ></div>
+                <div
+                  class="relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-6 shadow-soft"
+                >
+                  <div class="grid grid-cols-3 gap-3 text-xs text-slate-600 dark:text-slate-300">
+                    <div
+                      class="col-span-3 font-semibold text-slate-900 dark:text-white"
+                      data-i18n="stack.title"
+                    >
+                      Stack principal
+                    </div>
+                    <span
+                      class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 dark:text-slate-100"
+                      >Java / Spring</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 dark:text-slate-100"
+                      >Kotlin</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 dark:text-slate-100"
+                      >Flutter</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 dark:text-slate-100"
+                      >Python</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 dark:text-slate-100"
+                      >Linux</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 dark:text-slate-100"
+                      >SQL</span
+                    >
+                  </div>
+                  <hr class="my-4 dark:border-slate-700" />
+                  <p class="text-sm text-slate-600 dark:text-slate-300">
+                    Experiencia en microservicios (Spring Boot, JPA/Hibernate), CI/CD, y apps
+                    móviles. Interés activo en IA (TensorFlow/Keras) e incremental learning.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2
+            class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white"
+            data-i18n="services.title"
+          >
+            Servicios
+          </h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="services.subtitle">
+            Paquetes claros y listos para contratar.
+          </p>
+
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-soft"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 grid place-content-center rounded-xl bg-brand-100 text-brand-800"
+                >
+                  API
+                </div>
+                <h3
+                  class="font-semibold text-slate-900 dark:text-white"
+                  data-i18n="services.api.title"
+                >
+                  API REST con Spring Boot
+                </h3>
+              </div>
+              <p
+                class="mt-3 text-sm text-slate-600 dark:text-slate-300"
+                data-i18n="services.api.desc"
+              >
+                Diseño e implementación de endpoints, seguridad (JWT), documentación con OpenAPI,
+                despliegue.
+              </p>
+            </article>
+
+            <article
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-soft"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 grid place-content-center rounded-xl bg-brand-100 text-brand-800"
+                >
+                  APP
+                </div>
+                <h3
+                  class="font-semibold text-slate-900 dark:text-white"
+                  data-i18n="services.android.title"
+                >
+                  App Android (Kotlin)
+                </h3>
+              </div>
+              <p
+                class="mt-3 text-sm text-slate-600 dark:text-slate-300"
+                data-i18n="services.android.desc"
+              >
+                App nativa con MVVM, Retrofit, Room, notificaciones; publicación en Play Store si se
+                requiere.
+              </p>
+            </article>
+
+            <article
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-soft"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 grid place-content-center rounded-xl bg-brand-100 text-brand-800"
+                >
+                  FL
+                </div>
+                <h3
+                  class="font-semibold text-slate-900 dark:text-white"
+                  data-i18n="services.flutter.title"
+                >
+                  App Flutter (iOS/Android)
+                </h3>
+              </div>
+              <p
+                class="mt-3 text-sm text-slate-600 dark:text-slate-300"
+                data-i18n="services.flutter.desc"
+              >
+                Desarrollo multiplataforma con navegación, estado, SQLite/Firebase y despliegue.
+              </p>
+            </article>
+
+            <article
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-soft"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 grid place-content-center rounded-xl bg-brand-100 text-brand-800"
+                >
+                  IA
+                </div>
+                <h3
+                  class="font-semibold text-slate-900 dark:text-white"
+                  data-i18n="services.ai.title"
+                >
+                  IA aplicada (Python)
+                </h3>
+              </div>
+              <p
+                class="mt-3 text-sm text-slate-600 dark:text-slate-300"
+                data-i18n="services.ai.desc"
+              >
+                Prototipos con TensorFlow/Keras, análisis de datos y pequeñas POCs de aprendizaje
+                incremental.
+              </p>
+            </article>
+
+            <article
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-soft"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 grid place-content-center rounded-xl bg-brand-100 text-brand-800"
+                >
+                  OPS
+                </div>
+                <h3
+                  class="font-semibold text-slate-900 dark:text-white"
+                  data-i18n="services.devops.title"
+                >
+                  Automatización & DevOps
+                </h3>
+              </div>
+              <p
+                class="mt-3 text-sm text-slate-600 dark:text-slate-300"
+                data-i18n="services.devops.desc"
+              >
+                Scripts en Bash/Python, Docker básico, pipelines de CI/CD y buenas prácticas en
+                Linux.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos" class="py-16 sm:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <h2
+                class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white"
+                data-i18n="projects.title"
+              >
+                Proyectos destacados
+              </h2>
+              <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="projects.subtitle">
+                Desliza para ver más · problema → solución → resultado.
+              </p>
+            </div>
+            <div class="hidden sm:flex items-center gap-2">
+              <button
+                class="carousel-prev inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-600 dark:hover:border-slate-500"
+                aria-label="Anterior"
+              >
+                ←
+              </button>
+              <button
+                class="carousel-next inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-600 dark:hover:border-slate-500"
+                aria-label="Siguiente"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          <div class="relative mt-6">
+            <div
+              id="projectsCarousel"
+              class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
+              style="scrollbar-width: none"
+              aria-label="Carrusel de proyectos"
+            ></div>
+            <div
+              id="carouselDots"
+              class="mt-6 flex items-center justify-center gap-2"
+              aria-label="Paginación del carrusel"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre-mi" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2
+            class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white"
+            data-i18n="about.title"
+          >
+            Sobre mí
+          </h2>
+          <div class="mt-6 grid lg:grid-cols-3 gap-8 items-start">
+            <img
+              class="rounded-2xl border border-slate-200 dark:border-slate-700 shadow-soft w-full max-w-sm"
+              src="assets/img/cv.webp"
+              alt="Foto de Luis"
+            />
+            <div class="lg:col-span-2">
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="about.p1">
+                Soy ingeniero en sistemas y desarrollador con experiencia en backend
+                <strong>Java/Spring Boot</strong>, <strong>Android (Kotlin)</strong> y
+                <strong>Flutter</strong>...
+              </p>
+              <p
+                class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed"
+                data-i18n="about.p2"
+              >
+                Me gusta construir soluciones simples, bien documentadas y fáciles de mantener...
+              </p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="#contacto"
+                  class="inline-flex items-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-xl hover:bg-brand-700"
+                  data-i18n="about.cta"
+                  >Hablemos</a
+                >
+                <a
+                  href="https://github.com/LuisGH28"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 hover:border-slate-400 dark:border-slate-600 dark:hover:border-slate-500"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="py-16 sm:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2
+            class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white"
+            data-i18n="contact.title"
+          >
+            Contacto
+          </h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="contact.subtitle">
+            ¿Tienes un proyecto? Cuéntame un poco y te respondo.
+          </p>
+
+          <div class="mt-8 grid lg:grid-cols-3 gap-8">
+            <form
+              class="lg:col-span-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-soft"
+              action="https://formspree.io/f/your-id"
+              method="POST"
+            >
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="text-sm">
+                  <span data-i18n="contact.nameLabel">Nombre</span>
+                  <input
+                    required
+                    name="nombre"
+                    class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-600 px-3 py-2 bg-white dark:bg-slate-900/40"
+                    placeholder="Tu nombre"
+                  />
+                </label>
+                <label class="text-sm">
+                  <span data-i18n="contact.emailLabel">Email</span>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-600 px-3 py-2 bg-white dark:bg-slate-900/40"
+                    placeholder="tu@email.com"
+                  />
+                </label>
+              </div>
+              <label class="block mt-4 text-sm">
+                <span data-i18n="contact.msgLabel">Mensaje</span>
+                <textarea
+                  required
+                  name="mensaje"
+                  rows="5"
+                  class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-600 px-3 py-2 bg-white dark:bg-slate-900/40"
+                  placeholder="Cuéntame sobre tu proyecto"
+                ></textarea>
+              </label>
+              <button
+                class="mt-4 inline-flex items-center gap-2 bg-brand-600 text-white px-5 py-3 rounded-xl hover:bg-brand-700"
+                data-i18n="contact.send"
+              >
+                Enviar
+              </button>
+            </form>
+
+            <div
+              class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 h-fit"
+            >
+              <h3 class="font-semibold text-slate-900 dark:text-white">También por acá:</h3>
+              <ul class="mt-4 text-slate-600 dark:text-slate-300 space-y-2">
+                <li>
+                  <a
+                    class="hover:text-slate-900 dark:hover:text-white"
+                    href="mailto:luisgnzhdz@gmail.com"
+                    >luisgnzhdz@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hover:text-slate-900 dark:hover:text-white"
+                    href="https://github.com/LuisGH28"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub: @LuisGH28</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hover:text-slate-900 dark:hover:text-white"
+                    href="https://luigidev28.netlify.app"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Sitio actual</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 text-sm text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row items-center justify-between gap-3"
+      >
+        <p>© <span id="year"></span> Luis González. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#inicio">Inicio</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#servicios">Servicios</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#proyectos">Proyectos</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "finanzas-michis",
+    "title": "Finanzas con Michis (Flutter)",
+    "tags": ["Flutter", "SQLite", "Charts"],
+    "summary": "App para control de gastos con SQLite, gráficos y futura IA asistente.",
+    "image": "/src/assets/img/projects/finanzas_con_michis.webp",
+    "links": {
+      "repo": "https://github.com/LuisGH28/Finanzas-con-Michis",
+      "demo": "#"
+    }
+  },
+  {
+    "id": "michi-qr",
+    "title": "Michi Qr Generator",
+    "tags": ["Python", "Pillow", "QRcode"],
+    "summary": "Generador de Qr personalizados con Michis",
+    "image": "/src/assets/img/projects/michi_qr_generator.webp",
+    "links": {
+      "repo": "https://github.com/LuisGH28/michi_qr_generator",
+      "demo": "#"
+    }
+  },
+  {
+    "id": "linux-automation",
+    "title": "Automatizaciones Linux/Python",
+    "tags": ["Bash", "Python", "CI/CD"],
+    "summary": "Scripts para backups, despliegues y tareas repetitivas.",
+    "image": "/src/assets/img/projects/automatition.webp",
+    "links": {
+      "repo": "https://github.com/LuisGH28",
+      "demo": "#"
+    }
+  }
+]

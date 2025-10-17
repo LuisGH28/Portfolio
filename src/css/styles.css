@@ -1,0 +1,10 @@
+.fade-up { opacity: 0; transform: translateY(8px); animation: fadeUp .6s ease-out forwards; }
+.fade-up.delay-1 { animation-delay: .1s; }
+.fade-up.delay-2 { animation-delay: .2s; }
+.fade-up.delay-3 { animation-delay: .3s; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+#proyectos article p,
+#proyectos article ul { color: rgb(71 85 105); }
+.dark #proyectos article p,
+.dark #proyectos article ul { color: rgb(226 232 240); }

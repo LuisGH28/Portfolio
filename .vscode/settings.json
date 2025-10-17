@@ -1,3 +1,29 @@
 {
-  "livePreview.defaultPreviewPath": "/index.html"
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+
+  "editor.formatOnSave": true,
+
+  "html.format.wrapLineLength": 100,
+  "html.format.endWithNewline": true,
+
+  "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
+  "editor.quickSuggestions": { "strings": true },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "html": "html"
+  },
+
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.preferences.quoteStyle": "auto"
 }
