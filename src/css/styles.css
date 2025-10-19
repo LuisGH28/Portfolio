@@ -8,3 +8,337 @@
 #proyectos article ul { color: rgb(71 85 105); }
 .dark #proyectos article p,
 .dark #proyectos article ul { color: rgb(226 232 240); }
+
+/* Estado general del carrusel cuando hay hover en alguna tarjeta */
+#projectsCarousel.is-hovering .project-card {
+  opacity: .6;
+  transform: scale(.98);
+  filter: saturate(.9);
+}
+
+/* La tarjeta bajo el mouse “gana” foco */
+#projectsCarousel.is-hovering .project-card.is-hovered {
+  opacity: 1;
+  transform: scale(1.04);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  filter: none;
+  outline: 2px solid rgba(99,102,241,.25);        /* ring suave */
+  outline-offset: 0;                               /* para que no salte el layout */
+}
+
+/* Respeta usuarios con reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .project-card { transition: none !important; }
+}
+
+
+:root {
+  --cat-base: #ffffff;
+  --cat-shadow: rgba(0,0,0,.10);
+  --cat-stroke: #1f2937;
+  --cat-blush: #ffc7d6;
+  --cat-inner: #ffdfe8;
+  --bubble-bg: #ffffff;
+  --bubble-text: #222;
+  --glow: rgba(79,70,229,.18);
+}
+
+.dark {
+  --cat-base: #ffffff;
+  --cat-shadow: rgba(0,0,0,.45);
+  --cat-stroke: #1f2937;
+  --cat-blush: #f8b4c6;
+  --cat-inner: #ffd3df;
+  --bubble-bg: rgba(255,255,255,.94);
+  --bubble-text: #0b1220;
+  --glow: rgba(99,102,241,.18);
+}
+
+.kawaii-cat-container {
+  position: fixed;
+  width: 200px;
+  height: 220px;
+  transition: transform .7s cubic-bezier(.22,1,.36,1), opacity .4s ease;
+  z-index: 9999;
+  pointer-events: none;
+  filter: drop-shadow(0 12px 28px var(--cat-shadow));
+
+  --flip: 1;
+  --rot: 0deg;
+  transform: scaleX(var(--flip)) rotate(var(--rot));
+}
+
+.kawaii-cat-container.hide-left  { left: -250px; --flip: 1; }
+.kawaii-cat-container.hide-right { right: -250px; --flip: -1; }
+.kawaii-cat-container.show-left  { left: 40px;  --flip: 1; }
+.kawaii-cat-container.show-right { right: 40px; --flip: -1; }
+
+.kawaii-cat-container.hide-top    { top: -250px; --rot: 90deg; }
+.kawaii-cat-container.hide-bottom { bottom: -250px; --rot: -90deg; }
+.kawaii-cat-container.show-top    { top: -28px;  --rot: 90deg; }
+.kawaii-cat-container.show-bottom { bottom: -28px; --rot: -90deg; }
+
+
+.kawaii-speech-bubble {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) scale(.9);
+  background: var(--bubble-bg);
+  color: var(--bubble-text);
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(148,163,184,.25);
+  font: 600 14px/1.2 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  box-shadow: 0 8px 30px var(--glow);
+  white-space: nowrap;
+  opacity: 0;
+  animation: bubbleIn .35s ease-out .35s forwards;
+  pointer-events: auto;
+}
+
+.kawaii-speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--bubble-bg);
+}
+
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(4px) scale(.92); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+.kawaii-head {
+  position: absolute;
+  width: 160px; height: 140px;
+  top: 40px; left: 20px;
+  background: radial-gradient(120px 90px at 50% 40%, #fff 0%, var(--cat-base) 70%);
+  border-radius: 50% 50% 46% 46%;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+  border: 1px solid rgba(148,163,184,.25);
+}
+
+.kawaii-ear {
+  position: absolute;
+  width: 0; height: 0; top: 12px;
+  border-left: 34px solid transparent;
+  border-right: 34px solid transparent;
+  border-bottom: 48px solid var(--cat-base);
+  filter: drop-shadow(0 3px 6px var(--cat-shadow));
+}
+.kawaii-ear.left  { left: 22px; transform: rotate(-20deg); }
+.kawaii-ear.right { right: 22px; transform: rotate(20deg); }
+.kawaii-ear-inner {
+  position: absolute; bottom: -44px; left: -20px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 28px solid var(--cat-inner);
+}
+
+.kawaii-eyes {
+  position: absolute; top: 50px; width: 100%;
+  display: flex; justify-content: center; gap: 34px;
+}
+.kawaii-eye {
+  width: 16px; height: 22px; background: #111;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  animation: blink 6s infinite;
+}
+.kawaii-eye::after {
+  content: "";
+  position: absolute;
+  width: 5px; height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  top: 4px; left: 3px; opacity: .9;
+}
+@keyframes blink { 0%, 96%, 100% { transform: scaleY(1); } 98% { transform: scaleY(.1); } }
+
+.kawaii-cheek {
+  position: absolute; top: 80px;
+  width: 22px; height: 16px;
+  background: var(--cat-blush);
+  border-radius: 50%;
+  opacity: .55;
+}
+.kawaii-cheek.left  { left: 18px; }
+.kawaii-cheek.right { right: 18px; }
+
+.kawaii-mouth {
+  position: absolute; top: 85px; left: 50%;
+  transform: translateX(-50%);
+  width: 42px; height: 24px;
+}
+.kawaii-mouth::before,
+.kawaii-mouth::after {
+  content: "";
+  position: absolute;
+  width: 18px; height: 12px;
+  border: 2px solid var(--cat-stroke);
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+}
+.kawaii-mouth::before { left: 0; }
+.kawaii-mouth::after  { right: 0; }
+
+.kawaii-nose {
+  position: absolute; top: 73px; left: 50%;
+  width: 9px; height: 8px;
+  background: var(--cat-stroke);
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.kawaii-whisker {
+  position: absolute;
+  width: 36px; height: 2px;
+  background: var(--cat-stroke);
+  opacity: .35;
+  top: 86px;
+}
+.kawaii-whisker.l1 { left: 0; transform: translateX(6px) rotate(-8deg); }
+.kawaii-whisker.l2 { left: 0; transform: translateX(6px) rotate(8deg); top: 92px; }
+.kawaii-whisker.r1 { right: 0; transform: translateX(-6px) rotate(8deg); }
+.kawaii-whisker.r2 { right: 0; transform: translateX(-6px) rotate(-8deg); top: 92px; }
+
+.kawaii-body {
+  position: absolute; top: 150px; left: 40px;
+  width: 120px; height: 80px;
+  background: radial-gradient(90px 60px at 50% 30%, #fff 0%, var(--cat-base) 70%);
+  border-radius: 45%;
+  border: 1px solid rgba(148,163,184,.25);
+}
+
+.kawaii-paw {
+  position: absolute;
+  width: 28px; height: 32px;
+  background: var(--cat-base);
+  border-radius: 50% 50% 46% 46%;
+  box-shadow: 0 4px 12px var(--cat-shadow);
+  border: 1px solid rgba(148,163,184,.25);
+  pointer-events: auto;
+  transition: transform .2s ease;
+}
+.kawaii-paw.left  { top: 168px; left: 36px; animation: wave 1.3s ease-in-out infinite; transform-origin: bottom center; }
+.kawaii-paw.right { top: 188px; right: 42px; }
+.kawaii-paw:active { transform: scale(.97); }
+
+.kawaii-paw-pads {
+  position: absolute; bottom: 5px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 3px;
+}
+.kawaii-pad {
+  width: 5px; height: 5px;
+  background: var(--cat-inner);
+  border-radius: 50%;
+}
+
+.kawaii-tail {
+  position: absolute;
+  top: 160px; right: 10px;
+  width: 58px; height: 58px;
+  background: var(--cat-base);
+  border-radius: 50%;
+  border: 1px solid rgba(148,163,184,.25);
+  box-shadow: 0 4px 14px var(--cat-shadow);
+  animation: wag 2.2s ease-in-out infinite;
+}
+
+@keyframes wave { 0%,100% { transform: rotate(0) } 50% { transform: rotate(18deg) } }
+@keyframes wag  { 0%,100% { transform: rotate(-6deg) } 50% { transform: rotate(6deg) } }
+
+@media (prefers-reduced-motion: reduce) {
+  .kawaii-paw, .kawaii-tail, .kawaii-eye { animation: none !important; }
+  .kawaii-cat-container { transition: none !important; }
+}
+
+:root{
+  --brand-1:#FFF2C9;
+  --brand-2:#FFF8E1;
+  --accent:#FF9ACB;
+  --cheek:#FFC1D9;
+  --line:#1f2937;    
+  --line-dark:#e5e7eb;
+  --bgGlass: rgba(255,255,255,.55);
+  --bgGlassDark: rgba(25,25,28,.55);
+  --strokeGlass: rgba(0,0,0,.06);
+  --shadow: 0 12px 30px rgba(0,0,0,.18);
+  --blur: saturate(160%) blur(10px);
+  --size: 72px;
+}
+.dark :root{ --line: var(--line-dark); }
+
+.kitty-btn{
+  position: fixed; right: 24px; bottom: 24px;
+  width: var(--size); height: var(--size);
+  border-radius: 999px; border: 1px solid var(--strokeGlass);
+  background:
+    linear-gradient(180deg, var(--bgGlass), transparent),
+    radial-gradient(120% 120% at 30% 10%, var(--brand-2), var(--brand-1) 55%, transparent 70%);
+  backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  box-shadow: var(--shadow);
+  display: grid; place-items: center; cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .2s ease, background .2s ease;
+  opacity: 0; visibility: hidden; transform: translateY(10px) scale(.96);
+  z-index: 9998; outline: none; padding: 0;
+}
+.dark .kitty-btn{
+  background:
+    linear-gradient(180deg, var(--bgGlassDark), transparent),
+    radial-gradient(120% 120% at 30% 10%, #3a2a35, #2a2228 55%, transparent 70%);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+.kitty-btn.is-visible{ opacity:1; visibility:visible; transform: translateY(0) scale(1); }
+.kitty-btn:hover{ transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 38px rgba(0,0,0,.22); }
+.kitty-btn:active{ transform: translateY(1px) scale(.98); }
+.kitty-btn:focus-visible{ box-shadow: 0 0 0 4px rgba(255,154,203,.25), 0 0 0 1.5px var(--accent); }
+
+.kitty-svg{ width: 64%; height: 64%; }
+
+.face-bg{ fill: #fff; opacity: .92; }
+.dark .face-bg{ fill: rgba(255,255,255,.96); }
+
+.ear-out{ fill: #fff; stroke: transparent; }
+.ear-in{ fill: var(--accent); opacity:.35; }
+
+.eye, .eye-open, .eye-wink, .mouth, .whisker{
+  stroke: var(--line); fill: none; stroke-width: 3;
+}
+.eye, .eye-open{ fill: var(--line); }
+.eye-shine{ fill: #fff; opacity:.9; }
+.nose{ fill: var(--accent); }
+.cheek{ fill: var(--cheek); opacity:.55; }
+
+.eye{ transform-origin: center; animation: blink 4.2s infinite; }
+@keyframes blink{
+  0%,96%,100%{ transform: scaleY(1); }
+  98%{ transform: scaleY(.1); }
+}
+
+.face-wink{ display: none; }
+.kitty-btn:hover .face{ display: none; }
+.kitty-btn:hover .face-wink{ display: inline; }
+
+@media (prefers-reduced-motion: reduce){
+  .kitty-btn, .eye{ transition:none !important; animation:none !important; }
+}
+
+.sr-only{
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+@media (max-width:640px){
+  :root{ --size: 64px; }
+}
+
+

@@ -28,8 +28,29 @@
     "summary": "Scripts para backups, despliegues y tareas repetitivas.",
     "image": "/src/assets/img/projects/automatition.webp",
     "links": {
-      "repo": "https://github.com/LuisGH28",
-      "demo": "#"
+      "repo": "https://github.com/LuisGH28"
+    }
+  },
+  {
+    "id":"encuentros-magicos",
+    "title":"Encuentros Magicos",
+    "tags":["HTML", "CSS", "JS"],
+    "summary":"Scripts para backups, despliegues y tareas repetitivas.",
+    "image": "/src/assets/img/projects/encuentros_magicos.webp",
+    "links":{
+      "repo": "https://github.com/LuisGH28/newAdventure",
+      "demo": "https://encuentrosmagicos.netlify.app"
+    }
+  },
+  {
+    "id": "git-assistant",
+    "title": "Git Assistant",
+    "tags": ["Python", "Scikit-learn", "Joblib"],
+    "summary": "Intelligent Git assistant that automates semantic commit creation and generates Pull Request templates, with support for change analysis and AI-based suggestions.",
+    "image": "/src/assets/img/projects/git_assistant.webp",
+    "links":{
+      "repo":"https://github.com/LuisGH28/git_assitant",
+      "download": "https://pypi.org/project/ai-git-assistant/"
     }
   }
 ]
