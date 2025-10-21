@@ -46,7 +46,11 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="flex items-center justify-between h-16">
           <a href="#inicio" class="flex items-center gap-2 font-semibold">
-            <img class="w-9 h-9 rounded-full" src="assets/img/logos/logo_icon_white.webp" alt="Avatar" />
+            <img
+              class="w-9 h-9 rounded-full"
+              src="assets/img/logos/logo_icon_white.webp"
+              alt="Avatar"
+            />
             <span>Luis González</span>
           </a>
 
@@ -280,10 +284,12 @@
                     >
                   </div>
                   <hr class="my-4 dark:border-slate-700" />
-                  <p class="text-sm text-slate-600 dark:text-slate-300">
-                    Experiencia en microservicios (Spring Boot, JPA/Hibernate), CI/CD, y apps
-                    móviles. Interés activo en IA (TensorFlow/Keras) e incremental learning.
-                  </p>
+                  <div data-i18n="experience.info">
+                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                      Experiencia en microservicios (Spring Boot, JPA/Hibernate), CI/CD y apps
+                      móviles. Interés activo en IA (TensorFlow/Keras) y aprendizaje incremental.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -493,9 +499,10 @@
             />
             <div class="lg:col-span-2">
               <p class="text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="about.p1">
-                Soy ingeniero en sistemas y desarrollador con experiencia en backend
-                <strong>Java/Spring Boot</strong>, <strong>Android (Kotlin)</strong> y
-                <strong>Flutter</strong>...
+                Soy ingeniero en sistemas y desarrollador con experiencia en backend <strong>Java/Spring
+                Boot, Android (Kotlin) y Flutter</strong>. He trabajado con bases de datos SQL,
+                automatización en Linux y pipelines CI/CD. Actualmente curso una maestría enfocada
+                en el estudio de <strong>redes neuronales y aprendizaje incremental</strong>.
               </p>
               <p
                 class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed"
@@ -549,6 +556,7 @@
                     name="nombre"
                     class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-600 px-3 py-2 bg-white dark:bg-slate-900/40"
                     placeholder="Tu nombre"
+                    data-i18n-placeholder="form.name"
                   />
                 </label>
                 <label class="text-sm">
@@ -559,6 +567,7 @@
                     name="email"
                     class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-600 px-3 py-2 bg-white dark:bg-slate-900/40"
                     placeholder="tu@email.com"
+                    data-i18n-placeholder="form.email"
                   />
                 </label>
               </div>
@@ -570,6 +579,7 @@
                   rows="5"
                   class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-600 px-3 py-2 bg-white dark:bg-slate-900/40"
                   placeholder="Cuéntame sobre tu proyecto"
+                  data-i18n-placeholder="form.projects"
                 ></textarea>
               </label>
               <button
@@ -583,7 +593,7 @@
             <div
               class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 h-fit"
             >
-              <h3 class="font-semibold text-slate-900 dark:text-white">También por acá:</h3>
+              <h3 class="font-semibold text-slate-900 dark:text-white" data-i18n="info.contact">También por acá:</h3>
               <ul class="mt-4 text-slate-600 dark:text-slate-300 space-y-2">
                 <li>
                   <a
@@ -601,15 +611,6 @@
                     >GitHub: @LuisGH28</a
                   >
                 </li>
-                <li>
-                  <a
-                    class="hover:text-slate-900 dark:hover:text-white"
-                    href="https://luigidev28.netlify.app"
-                    target="_blank"
-                    rel="noreferrer"
-                    >Sitio actual</a
-                  >
-                </li>
               </ul>
             </div>
           </div>
@@ -617,16 +618,15 @@
       </section>
     </main>
 
-
     <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
       <div
         class="max-w-6xl mx-auto px-4 sm:px-6 text-sm text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row items-center justify-between gap-3"
       >
-        <p>© <span id="year"></span> Luis González. Todos los derechos reservados.</p>
+        <p data-i18n="footer.rights"></p>
         <div class="flex items-center gap-4">
-          <a class="hover:text-slate-900 dark:hover:text-white" href="#inicio">Inicio</a>
-          <a class="hover:text-slate-900 dark:hover:text-white" href="#servicios">Servicios</a>
-          <a class="hover:text-slate-900 dark:hover:text-white" href="#proyectos">Proyectos</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" data-i18n="nav.home" href="#inicio">Inicio</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" data-i18n="nav.services" href="#servicios">Servicios</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" data-i18n="nav.projects" href="#proyectos">Proyectos</a>
         </div>
       </div>
     </footer>

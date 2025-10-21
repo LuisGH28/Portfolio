@@ -12,6 +12,7 @@
     "hero.ctaQuote": "Request a quote",
     "hero.ctaProjects": "See projects",
     "stack.title": "Core Stack",
+    "experience.info": "Experience with microservices (Spring Boot, JPA/Hibernate), CI/CD and mobile applications. Active interest in AI (TensorFlow & Keras) and incremental learning",
     "services.title": "Services",
     "services.subtitle": "Clear, ready-to-hire packages.",
     "services.api.title": "REST API with Spring Boot",
@@ -36,10 +37,15 @@
     "contact.title": "Contact",
     "contact.subtitle": "Got a project? Tell me a bit and I’ll reply soon.",
     "contact.nameLabel": "Name",
+    "form.name": "Your name",
     "contact.emailLabel": "Email",
+    "form.email": "your@email.com",
     "contact.msgLabel": "Message",
+    "form.projects": "Tell me about your projects.",
     "contact.send": "Send",
     "contact.namePlaceholder": "Your name",
     "contact.emailPlaceholder": "you@email.com",
-    "contact.msgPlaceholder": "Tell me about your project"
+    "contact.msgPlaceholder": "Tell me about your project",
+    "info.contact": "You can also reach me here:",
+    "footer.rights": "© <span id='year'></span> Luis González. All rights reserved."
 }

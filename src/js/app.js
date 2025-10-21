@@ -8,6 +8,7 @@
     return res.json();
   }
 
+  // ===================== THEME =====================
   function applyTheme(theme) {
     document.documentElement.classList.toggle("dark", theme === "dark");
     qsa(".theme-btn").forEach((b) =>
@@ -37,7 +38,39 @@
     });
   }
 
+  // ===================== I18N =====================
   let dict = {};
+
+  function hasKey(obj, key) {
+    return Object.prototype.hasOwnProperty.call(obj, key);
+  }
+
+  function translateElement(el) {
+    const key = el.getAttribute("data-i18n");
+    if (key) {
+      if (!el.dataset.i18nOrig) el.dataset.i18nOrig = el.innerHTML;
+      el.innerHTML = hasKey(dict, key) ? dict[key] : el.dataset.i18nOrig;
+    }
+
+    for (const attr of el.getAttributeNames()) {
+      if (attr.startsWith("data-i18n-") && attr !== "data-i18n") {
+        const targetAttr = attr.slice("data-i18n-".length);
+        const aKey = el.getAttribute(attr);
+        const dsKey = `i18nOrig_${targetAttr.replace(/[-:]/g, "_")}`;
+
+        if (!el.dataset[dsKey]) {
+          el.dataset[dsKey] = el.getAttribute(targetAttr) || "";
+        }
+
+        if (hasKey(dict, aKey)) {
+          el.setAttribute(targetAttr, dict[aKey]);
+        } else {
+          el.setAttribute(targetAttr, el.dataset[dsKey]);
+        }
+      }
+    }
+  }
+
   async function setLang(lang) {
     try {
       dict = await loadJSON(`./js/i18n/${lang}.json`);
@@ -45,17 +78,21 @@
       dict = await loadJSON(`./js/i18n/es.json`);
       lang = "es";
     }
+
     document.documentElement.lang = lang;
-    qsa("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      if (dict[key]) el.innerHTML = dict[key];
-    });
+
+    qsa("[data-i18n], [data-i18n-placeholder], [data-i18n-title], [data-i18n-alt], [data-i18n-aria-label], [data-i18n-value]").forEach(
+      translateElement
+    );
+
     qsa(".lang-btn").forEach((btn) =>
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang)
     );
+
     localStorage.setItem("lang", lang);
   }
 
+  // ===================== PROJECTS =====================
   async function renderProjects() {
     const wrap = document.querySelector("#projectsCarousel");
     if (!wrap) return;
@@ -86,7 +123,7 @@
                </a>`
             : "";
 
-            const downloadBtn = p.links?.download
+          const downloadBtn = p.links?.download
             ? `<a href="${p.links.download}" target="_blank" rel="noreferrer"
                  class="px-3 py-1.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700">
                  Download
@@ -162,21 +199,19 @@
     buildDots();
   }
 
-  // --- NUEVO: Hover para resaltar tarjeta activa y atenuar el resto ---
+  // --- Hover ---
   function setupProjectHover() {
     const carousel = document.querySelector("#projectsCarousel");
     if (!carousel) return;
 
     const cards = Array.from(carousel.querySelectorAll(".project-card"));
 
-    // Entrar en una tarjeta
     cards.forEach((card) => {
       card.addEventListener("mouseenter", () => {
         carousel.classList.add("is-hovering");
         card.classList.add("is-hovered");
       });
 
-      // Salir de la tarjeta
       card.addEventListener("mouseleave", () => {
         card.classList.remove("is-hovered");
         const anyHovered = cards.some((c) => c.matches(":hover"));
@@ -184,13 +219,11 @@
       });
     });
 
-    // Salida total del carrusel
     carousel.addEventListener("mouseleave", () => {
       carousel.classList.remove("is-hovering");
-      cards.forEach((c) => c.classList.remove("is-hovered"));
+      cards.forEach((c) => c.removeClass?.("is-hovered") || c.classList.remove("is-hovered"));
     });
 
-    // Soporte táctil: tap para enfocar
     cards.forEach((card) => {
       card.addEventListener(
         "touchstart",
@@ -203,19 +236,18 @@
       );
     });
   }
-  // --- FIN NUEVO ---
 
-  // Inicializaciones varias
+  // ===================== INIT =====================
   const yearEl = qs("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   const lang = localStorage.getItem("lang") || "es";
   setLang(lang);
+
   qsa(".lang-btn").forEach((b) =>
     b.addEventListener("click", () => setLang(b.getAttribute("data-lang")))
   );
 
-  // Orden correcto: render → carrusel → hover
   renderProjects().then(() => {
     setupCarousel();
     setupProjectHover();
