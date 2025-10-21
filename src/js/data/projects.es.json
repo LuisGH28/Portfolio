@@ -7,7 +7,7 @@
     "image": "/src/assets/img/projects/finanzas_con_michis.webp",
     "links": {
       "repo": "https://github.com/LuisGH28/Finanzas-con-Michis",
-      "demo": "#"
+      "documentation": "#"
     }
   },
   {
@@ -17,8 +17,7 @@
     "summary": "Generador de Qr personalizados con Michis",
     "image": "/src/assets/img/projects/michi_qr_generator.webp",
     "links": {
-      "repo": "https://github.com/LuisGH28/michi_qr_generator",
-      "demo": "#"
+      "repo": "https://github.com/LuisGH28/michi_qr_generator"
     }
   },
   {
@@ -35,7 +34,7 @@
     "id":"encuentros-magicos",
     "title":"Encuentros Magicos",
     "tags":["HTML", "CSS", "JS"],
-    "summary":"Scripts para backups, despliegues y tareas repetitivas.",
+    "summary":"Pequeña web interactiva que combina humor y ternura: una historia mágica donde cada clic puede ser el inicio de algo especial.",
     "image": "/src/assets/img/projects/encuentros_magicos.webp",
     "links":{
       "repo": "https://github.com/LuisGH28/newAdventure",
@@ -46,11 +45,12 @@
     "id": "git-assistant",
     "title": "Git Assistant",
     "tags": ["Python", "Scikit-learn", "Joblib"],
-    "summary": "Intelligent Git assistant that automates semantic commit creation and generates Pull Request templates, with support for change analysis and AI-based suggestions.",
+    "summary": "Asistente de Git inteligente que automatiza la creación de commits semánticos y genera plantillas de Pull Request, con soporte para análisis de cambios y sugerencias basadas en IA.",
     "image": "/src/assets/img/projects/git_assistant.webp",
     "links":{
       "repo":"https://github.com/LuisGH28/git_assitant",
       "download": "https://pypi.org/project/ai-git-assistant/"
     }
   }
+
 ]

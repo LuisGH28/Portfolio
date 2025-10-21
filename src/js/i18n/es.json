@@ -47,5 +47,9 @@
     "contact.emailPlaceholder": "tu@email.com",
     "contact.msgPlaceholder": "Cuéntame sobre tu proyecto",
     "info.contact": "También por acá:",
-    "footer.rights": "© <span id='year'></span> Luis González. Todos los derechos reservados."
+    "footer.rights": "© <span id='year'></span> Luis González. Todos los derechos reservados.",
+    "buttons.repo": "Repositorio",
+    "buttons.demo": "Demo",
+    "buttons.download": "Descargar",
+    "buttons.documentation": "Documentación"
 }

@@ -8,7 +8,6 @@
     return res.json();
   }
 
-  // ===================== THEME =====================
   function applyTheme(theme) {
     document.documentElement.classList.toggle("dark", theme === "dark");
     qsa(".theme-btn").forEach((b) =>
@@ -16,9 +15,7 @@
     );
   }
 
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   applyTheme(localStorage.getItem("theme") || systemTheme);
 
   document.addEventListener("click", (e) => {
@@ -38,39 +35,7 @@
     });
   }
 
-  // ===================== I18N =====================
   let dict = {};
-
-  function hasKey(obj, key) {
-    return Object.prototype.hasOwnProperty.call(obj, key);
-  }
-
-  function translateElement(el) {
-    const key = el.getAttribute("data-i18n");
-    if (key) {
-      if (!el.dataset.i18nOrig) el.dataset.i18nOrig = el.innerHTML;
-      el.innerHTML = hasKey(dict, key) ? dict[key] : el.dataset.i18nOrig;
-    }
-
-    for (const attr of el.getAttributeNames()) {
-      if (attr.startsWith("data-i18n-") && attr !== "data-i18n") {
-        const targetAttr = attr.slice("data-i18n-".length);
-        const aKey = el.getAttribute(attr);
-        const dsKey = `i18nOrig_${targetAttr.replace(/[-:]/g, "_")}`;
-
-        if (!el.dataset[dsKey]) {
-          el.dataset[dsKey] = el.getAttribute(targetAttr) || "";
-        }
-
-        if (hasKey(dict, aKey)) {
-          el.setAttribute(targetAttr, dict[aKey]);
-        } else {
-          el.setAttribute(targetAttr, el.dataset[dsKey]);
-        }
-      }
-    }
-  }
-
   async function setLang(lang) {
     try {
       dict = await loadJSON(`./js/i18n/${lang}.json`);
@@ -81,52 +46,92 @@
 
     document.documentElement.lang = lang;
 
-    qsa("[data-i18n], [data-i18n-placeholder], [data-i18n-title], [data-i18n-alt], [data-i18n-aria-label], [data-i18n-value]").forEach(
-      translateElement
-    );
+    qsa("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key]) el.innerHTML = dict[key];
+    });
+
+    qsa("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (dict[key]) el.setAttribute("placeholder", dict[key]);
+    });
+
+    qsa("[data-i18n-value]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-value");
+      if (dict[key]) el.value = dict[key];
+    });
+
+    qsa("[data-i18n-title]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-title");
+      if (dict[key]) el.setAttribute("title", dict[key]);
+    });
 
     qsa(".lang-btn").forEach((btn) =>
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang)
     );
 
     localStorage.setItem("lang", lang);
+
+    const cvLinks = document.querySelectorAll(
+      'a[data-i18n="nav.downloadCV"], header a[href$=".pdf"]'
+    );
+    cvLinks.forEach((link) => {
+      if (lang === "en") {
+        link.setAttribute("href", "/public/Cv_GHLA_EN.pdf");
+      } else {
+        link.setAttribute("href", "/public/Cv_GHLA.pdf");
+      }
+    });
+
+    await renderProjects();
+    setupProjectHover();
   }
 
-  // ===================== PROJECTS =====================
   async function renderProjects() {
     const wrap = document.querySelector("#projectsCarousel");
     if (!wrap) return;
 
     try {
-      const projects = await loadJSON("./js/data/projects.json");
+      const lang = document.documentElement.lang || localStorage.getItem("lang") || "es";
+      const projects = await loadJSON(`./js/data/projects.${lang}.json`);
+
+      const repoLabel = (dict && dict["buttons.repo"]) || "Repo";
+      const demoLabel = (dict && dict["buttons.demo"]) || "Demo";
+      const downloadLabel = (dict && dict["buttons.download"]) || "Download";
+      const documentationLabel = (dict && dict["buttons.documentation"] || "Documentation")
+
       wrap.innerHTML = projects
         .map((p) => {
           const tags = (p.tags || [])
-            .map(
-              (t) =>
-                `<span class="text-xs px-2 py-0.5 rounded-lg border">${t}</span>`
-            )
+            .map((t) => `<span class="text-xs px-2 py-0.5 rounded-lg border">${t}</span>`)
             .join("");
 
           const repoBtn = p.links?.repo
             ? `<a href="${p.links.repo}" target="_blank" rel="noreferrer"
                  class="px-3 py-1.5 rounded-lg border border-slate-300 hover:border-slate-400
                         dark:border-slate-600 dark:hover:border-slate-500">
-                 Repositorio
+                 ${repoLabel}
                </a>`
             : "";
 
           const demoBtn = p.links?.demo
             ? `<a href="${p.links.demo}" target="_blank" rel="noreferrer"
                  class="px-3 py-1.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700">
-                 Demo
+                 ${demoLabel}
                </a>`
             : "";
 
           const downloadBtn = p.links?.download
             ? `<a href="${p.links.download}" target="_blank" rel="noreferrer"
                  class="px-3 py-1.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700">
-                 Download
+                 ${downloadLabel}
+               </a>`
+            : "";
+
+            const documentationBtn = p.links?.documentation
+            ? `<a href="${p.links.documentation}" target="_blank" rel="noreferrer"
+                 class="px-3 py-1.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700">
+                 ${documentationLabel}
                </a>`
             : "";
 
@@ -136,16 +141,20 @@
                            border border-slate-200 dark:border-slate-700
                            rounded-xl shadow-soft overflow-hidden
                            transition-all duration-200 will-change-transform">
-              <img src="${p.image}" alt="${p.title}" class="h-40 w-full object-cover" loading="lazy">
+              <img src="${p.image}" alt="${
+            p.title ?? ""
+          }" class="h-40 w-full object-cover" loading="lazy">
               <div class="p-4">
-                <h3 class="font-semibold text-lg text-slate-900 dark:text-white">${p.title}</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">${p.summary}</p>
+                <h3 class="font-semibold text-lg text-slate-900 dark:text-white">${
+                  p.title ?? ""
+                }</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">${p.summary ?? ""}</p>
 
                 ${tags ? `<div class="mt-2 flex flex-wrap gap-2">${tags}</div>` : ""}
 
                 ${
-                  repoBtn || demoBtn || downloadBtn
-                    ? `<div class="mt-4 flex gap-3 text-sm">${repoBtn}${demoBtn}${downloadBtn}</div>`
+                  repoBtn || demoBtn || downloadBtn || documentationBtn
+                    ? `<div class="mt-4 flex gap-3 text-sm">${repoBtn}${demoBtn}${downloadBtn}${documentationBtn}</div>`
                     : ""
                 }
               </div>
@@ -153,7 +162,7 @@
         })
         .join("");
     } catch (e) {
-      console.warn("No se cargó projects.json", e);
+      console.warn("No se cargó el archivo de proyectos", e);
     }
   }
 
@@ -186,8 +195,7 @@
       const slides = carousel.querySelectorAll("article");
       slides.forEach((_, i) => {
         const b = document.createElement("button");
-        b.className =
-          "h-2.5 w-2.5 rounded-full bg-slate-400 aria-[current=true]:bg-brand-600";
+        b.className = "h-2.5 w-2.5 rounded-full bg-slate-400 aria-[current=true]:bg-brand-600";
         b.addEventListener("click", () => {
           carousel.scrollTo({ left: i * getCardWidth(), behavior: "smooth" });
         });
@@ -199,7 +207,6 @@
     buildDots();
   }
 
-  // --- Hover ---
   function setupProjectHover() {
     const carousel = document.querySelector("#projectsCarousel");
     if (!carousel) return;
@@ -221,7 +228,7 @@
 
     carousel.addEventListener("mouseleave", () => {
       carousel.classList.remove("is-hovering");
-      cards.forEach((c) => c.removeClass?.("is-hovered") || c.classList.remove("is-hovered"));
+      cards.forEach((c) => c.classList.remove("is-hovered"));
     });
 
     cards.forEach((card) => {
@@ -237,7 +244,6 @@
     });
   }
 
-  // ===================== INIT =====================
   const yearEl = qs("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
