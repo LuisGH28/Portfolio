@@ -77,9 +77,9 @@
     );
     cvLinks.forEach((link) => {
       if (lang === "en") {
-        link.setAttribute("href", "./public/Cv_GHLA_EN.pdf");
+        link.setAttribute("href", "assets/docs/Cv_GHLA_EN.pdf");
       } else {
-        link.setAttribute("href", "./public/Cv_GHLA.pdf");
+        link.setAttribute("href", "assets/docs/Cv_GHLA.pdf");
       }
     });
 
