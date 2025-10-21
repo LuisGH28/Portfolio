@@ -7,7 +7,7 @@
     "image": "/src/assets/img/projects/finanzas_con_michis.webp",
     "links": {
       "repo": "https://github.com/LuisGH28/Finanzas-con-Michis",
-      "documentation": "#"
+      "documentation": "/public/finanzas_con_michis_es.pdf"
     }
   },
   {
@@ -27,7 +27,7 @@
     "summary": "Scripts para backups, despliegues y tareas repetitivas.",
     "image": "/src/assets/img/projects/automatition.webp",
     "links": {
-      "repo": "https://github.com/LuisGH28"
+      "repo": "https://github.com/LuisGH28/Automatization"
     }
   },
   {
