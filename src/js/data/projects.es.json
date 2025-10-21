@@ -7,7 +7,7 @@
     "image": "assets/img/projects/finanzas_con_michis.webp",
     "links": {
       "repo": "https://github.com/LuisGH28/Finanzas-con-Michis",
-      "documentation": "/public/finanzas_con_michis_es.pdf"
+      "documentation": "./public/finanzas_con_michis_es.pdf"
     }
   },
   {
