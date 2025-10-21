@@ -4,7 +4,7 @@
     "title": "Finanzas con Michis (Flutter)",
     "tags": ["Flutter", "SQLite", "Charts"],
     "summary": "Expense manager app using SQLite, charts, and a planned AI assistant.",
-    "image": "/src/assets/img/projects/finanzas_con_michis.webp",
+    "image": "assets/img/projects/finanzas_con_michis.webp",
     "links": {
       "repo": "https://github.com/LuisGH28/Finanzas-con-Michis",
       "documentation": "/public/finanzas_con_michis_en.pdf"
@@ -15,7 +15,7 @@
     "title": "Michi Qr Generator",
     "tags": ["Python", "Pillow", "QRcode"],
     "summary": "Cat-themed custom QR code generator.",
-    "image": "/src/assets/img/projects/michi_qr_generator.webp",
+    "image": "assets/img/projects/michi_qr_generator.webp",
     "links": {
       "repo": "https://github.com/LuisGH28/michi_qr_generator"
     }
@@ -25,7 +25,7 @@
     "title": "Linux/Python Automations",
     "tags": ["Bash", "Python", "CI/CD"],
     "summary": "Backup, deployment, and automation scripts.",
-    "image": "/src/assets/img/projects/automatition.webp",
+    "image": "assets/img/projects/automatition.webp",
     "links": {
       "repo": "https://github.com/LuisGH28/Automatization"
     }
@@ -35,7 +35,7 @@
     "title":"Encuentros Magicos",
     "tags":["HTML", "CSS", "JS"],
     "summary":"A playful and charming interactive web experience where every click can start a magical story.",
-    "image": "/src/assets/img/projects/encuentros_magicos.webp",
+    "image": "assets/img/projects/encuentros_magicos.webp",
     "links":{
       "repo": "https://github.com/LuisGH28/newAdventure",
       "demo": "https://encuentrosmagicos.netlify.app"
@@ -46,7 +46,7 @@
     "title": "Git Assistant",
     "tags": ["Python", "Scikit-learn", "Joblib"],
     "summary": "Intelligent Git assistant that automates semantic commit creation and generates Pull Request templates, with support for change analysis and AI-based suggestions.",
-    "image": "/src/assets/img/projects/git_assistant.webp",
+    "image": "assets/img/projects/git_assistant.webp",
     "links":{
       "repo":"https://github.com/LuisGH28/git_assitant",
       "download": "https://pypi.org/project/ai-git-assistant/"
