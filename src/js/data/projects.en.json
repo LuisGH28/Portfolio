@@ -1,5 +1,16 @@
 [
   {
+    "id":"MichiXO",
+    "title": "MichiXO",
+    "tags":["Kotlin", "Jeckpack Compose"],
+    "summary": "Mobile game developed in Kotlin and Jetpack Compose with a kawaii theme, adaptive AI, and special modes like Super Michis.",
+    "image": "assets/img/projects/michixo.webp",
+    "links": {
+      "play": "https://play.google.com/store/apps/details?id=com.luigidev.michixo.mobile",
+      "repo": "https://github.com/LuisGH28/michi-xo"
+    }
+  },
+  {
     "id": "finanzas-michis",
     "title": "Finanzas con Michis (Flutter)",
     "tags": ["Flutter", "SQLite", "Charts"],

@@ -95,8 +95,9 @@
       const lang = document.documentElement.lang || localStorage.getItem("lang") || "es";
       const projects = await loadJSON(`./js/data/projects.${lang}.json`);
 
-      const repoLabel = (dict && dict["buttons.repo"]) || "Repo";
+      const repoLabel = (dict && dict["buttons.repo"]) || "Repositorio";
       const demoLabel = (dict && dict["buttons.demo"]) || "Demo";
+      const playLabel = (dict && dict["button.play"]) || "Google Play";
       const downloadLabel = (dict && dict["buttons.download"]) || "Download";
       const documentationLabel = (dict && dict["buttons.documentation"] || "Documentation")
 
@@ -118,6 +119,13 @@
             ? `<a href="${p.links.demo}" target="_blank" rel="noreferrer"
                  class="px-3 py-1.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700">
                  ${demoLabel}
+               </a>`
+            : "";
+
+          const playBtn = p.links?.play
+            ? `<a href="${p.links.play}" target="_blank" rel="noreferrer"
+                 class="px-3 py-1.5 rounded-lg bg-brand-900 text-white hover:bg-brand-700">
+                 ${playLabel}
                </a>`
             : "";
 
@@ -153,8 +161,8 @@
                 ${tags ? `<div class="mt-2 flex flex-wrap gap-2">${tags}</div>` : ""}
 
                 ${
-                  repoBtn || demoBtn || downloadBtn || documentationBtn
-                    ? `<div class="mt-4 flex gap-3 text-sm">${repoBtn}${demoBtn}${downloadBtn}${documentationBtn}</div>`
+                  repoBtn || demoBtn || downloadBtn || documentationBtn || playBtn
+                    ? `<div class="mt-4 flex gap-3 text-sm">${repoBtn}${demoBtn}${downloadBtn}${documentationBtn}${playBtn}</div>`
                     : ""
                 }
               </div>
