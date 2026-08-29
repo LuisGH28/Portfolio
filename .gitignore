@@ -28,5 +28,12 @@ desktop.ini
 *.secret
 *.key
 
+node_modules/
+.next/
+out/
+tsconfig.tsbuildinfo
+AGENTS.md
+CLAUDE.md
+
 CV-*.pdf
 *.DS_Store

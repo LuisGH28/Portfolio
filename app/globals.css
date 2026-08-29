@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #09090b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 57% 14%, rgba(47, 128, 255, 0.13), transparent 25rem),
+    radial-gradient(circle at 86% 28%, rgba(111, 71, 255, 0.11), transparent 19rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 18rem),
+    #09090b;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(47, 128, 255, 0.38);
+}
+
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.075) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at 58% 35%, black, transparent 68%);
+}
+
+.noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.network-line {
+  stroke: rgba(76, 134, 255, 0.32);
+  stroke-width: 1;
+}
+
+.network-dot {
+  filter: drop-shadow(0 0 6px rgba(47, 128, 255, 0.6));
+}
+
+.world-dots {
+  background:
+    radial-gradient(circle, rgba(47, 128, 255, 0.9) 1.2px, transparent 1.4px) 14px 35px / 13px 13px,
+    radial-gradient(circle, rgba(148, 163, 184, 0.22) 1px, transparent 1.2px) 0 0 / 9px 9px;
+  mask-image: radial-gradient(ellipse at 65% 55%, black 0 36%, transparent 67%);
+  filter: drop-shadow(0 0 18px rgba(47, 128, 255, 0.25));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
