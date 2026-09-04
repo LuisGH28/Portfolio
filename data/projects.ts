@@ -102,22 +102,6 @@ export const projects: Project[] = [
     }
   },
   {
-    slug: "finanzas-con-michis",
-    name: "Michi Finanzas",
-    description: "Aplicación de finanzas personales desarrollada en Flutter.",
-    technologies: ["Flutter"],
-    github: "https://github.com/LuisGH28/Finanzas-con-Michis",
-    documentation: "/docs/finanzas_con_michis_es.pdf",
-    image: "/projects/finanzas-con-michis.webp",
-    variant: "image",
-    featured: false,
-    detail: {
-      overview:
-        "Proyecto Flutter para control de gastos personales. El repositorio anterior documenta SQLite, gráficos y una futura asistencia con IA.",
-      architecture: "Aplicación móvil Flutter con persistencia local y visualización de datos."
-    }
-  },
-  {
     slug: "michi-qr-generator",
     name: "QR Generator",
     description: "Generador de códigos QR personalizados.",
