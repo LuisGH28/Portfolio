@@ -75,7 +75,7 @@ export function ProjectVisual({ project }: ProjectVisualProps) {
           fill
           sizes="(min-width: 1024px) 33vw, 100vw"
           className="object-cover transition duration-500 group-hover:scale-[1.035]"
-          priority={project.name === "MichiXO"}
+          priority={project.recent || project.name === "MichiXO"}
         />
       ) : null}
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />

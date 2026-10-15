@@ -28,7 +28,7 @@ export function SelectedWork({ locale, messages }: SelectedWorkProps) {
           </a>
         }
       />
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
         {featuredProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} locale={locale} messages={messages} />
         ))}

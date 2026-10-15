@@ -1,7 +1,17 @@
 [build]
   base = "."
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 302
+
+[[redirects]]
+  from = "/projects/:slug"
+  to = "/en/projects/:slug"
+  status = 302

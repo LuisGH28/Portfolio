@@ -26,7 +26,14 @@ export function ProjectCard({ project, locale, messages }: ProjectCardProps) {
           <ProjectVisual project={project} />
         </div>
         <div className="mt-5">
-          <h3 className="text-lg font-semibold tracking-normal text-white">{project.name}</h3>
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-lg font-semibold tracking-normal text-white">{project.name}</h3>
+            {project.recent ? (
+              <span className="rounded border border-accent/30 bg-accent/10 px-2 py-0.5 font-mono text-[10px] uppercase text-accent">
+                {messages.projects.recent}
+              </span>
+            ) : null}
+          </div>
           <p className="mt-3 text-sm leading-7 text-zinc-300">{description}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {project.technologies.slice(0, 4).map((technology) => (

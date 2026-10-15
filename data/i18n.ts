@@ -64,7 +64,10 @@ export const messages = {
       viewAll: "View all projects",
       viewProject: "View project",
       viewResearch: "View research",
+      recent: "Recent",
       items: {
+        "red-por-la-justicia":
+          "Institutional website for a nonprofit focused on accessible legal guidance and support.",
         michixo: "Android and Wear OS game built with MVVM and AI based on Minimax alpha-beta.",
         "ai-git-assistant": "CLI tool that analyzes Git changes and suggests clearer commit messages.",
         mirage: "Research work on incremental learning with neural architectures and evolutionary optimization.",
@@ -212,7 +215,10 @@ export const messages = {
       viewAll: "Ver todos los proyectos",
       viewProject: "Ver proyecto",
       viewResearch: "Ver investigación",
+      recent: "Reciente",
       items: {
+        "red-por-la-justicia":
+          "Sitio web institucional para una asociación civil enfocada en orientación y apoyo jurídico.",
         michixo: "Juego para Android y Wear OS con arquitectura MVVM e IA basada en Minimax alfa-beta.",
         "ai-git-assistant": "Herramienta CLI que analiza cambios en Git y sugiere mensajes de commit más claros.",
         mirage: "Investigación sobre aprendizaje incremental con arquitecturas neuronales y optimización evolutiva.",

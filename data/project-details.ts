@@ -10,6 +10,23 @@ export type ProjectDetailCopy = {
 
 export const projectDetails: Record<Locale, Record<string, ProjectDetailCopy>> = {
   en: {
+    "red-por-la-justicia": {
+      overview:
+        "Official website for Red por la Justicia, A.C., a nonprofit organization that provides legal guidance and support.",
+      problem:
+        "Create a clear and trustworthy institutional presence that explains the organization's services and makes its legal support channels easy to find.",
+      architecture:
+        "Responsive web application built with Next.js, TypeScript and Tailwind CSS using reusable components.",
+      decisions: [
+        "Technical SEO with sitemap and structured data",
+        "Google Search Console configuration",
+        "Security hardening through CSP and HTTP headers"
+      ],
+      challenges: [
+        "Presenting legal information clearly with accessible navigation",
+        "Keeping the experience consistent across mobile and desktop devices"
+      ]
+    },
     michixo: {
       overview:
         "MichiXO is an Android and Wear OS game. It combines native UI, MVVM structure and game AI for move decisions.",
@@ -52,6 +69,23 @@ export const projectDetails: Record<Locale, Record<string, ProjectDetailCopy>> =
     }
   },
   es: {
+    "red-por-la-justicia": {
+      overview:
+        "Sitio web oficial de Red por la Justicia, A.C., una asociación civil dedicada a brindar orientación y acompañamiento jurídico.",
+      problem:
+        "Crear una presencia institucional clara y confiable que explique los servicios de la asociación y facilite el acceso a sus canales de apoyo jurídico.",
+      architecture:
+        "Aplicación web responsive construida con Next.js, TypeScript y Tailwind CSS mediante componentes reutilizables.",
+      decisions: [
+        "SEO técnico con sitemap y datos estructurados",
+        "Configuración de Google Search Console",
+        "Hardening de seguridad mediante CSP y headers HTTP"
+      ],
+      challenges: [
+        "Presentar información jurídica con claridad y una navegación accesible",
+        "Mantener una experiencia consistente en dispositivos móviles y de escritorio"
+      ]
+    },
     michixo: {
       overview:
         "MichiXO es un juego para Android y Wear OS. Combina interfaz nativa, estructura MVVM e IA para decidir movimientos.",

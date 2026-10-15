@@ -12,6 +12,7 @@ export type Project = {
   image?: string;
   variant?: "image" | "terminal" | "network";
   featured: boolean;
+  recent?: boolean;
   detail: {
     overview: string;
     problem?: string;
@@ -22,6 +23,36 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "red-por-la-justicia",
+    name: "Red por la Justicia, A.C.",
+    description:
+      "Sitio web institucional para una asociación civil enfocada en orientación y apoyo jurídico.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "SEO", "CSP"],
+    cta: "Visitar sitio",
+    href: "https://red-por-la-justicia.vercel.app",
+    image: "/projects/red-por-la-justicia.webp",
+    variant: "image",
+    featured: true,
+    recent: true,
+    detail: {
+      overview:
+        "Sitio web oficial de Red por la Justicia, A.C., una asociación civil dedicada a brindar orientación y acompañamiento jurídico.",
+      problem:
+        "Crear una presencia institucional clara y confiable que explique los servicios de la asociación y facilite el acceso a sus canales de apoyo jurídico.",
+      architecture:
+        "Aplicación web responsive construida con Next.js, TypeScript y Tailwind CSS mediante componentes reutilizables.",
+      decisions: [
+        "SEO técnico con sitemap y datos estructurados",
+        "Configuración de Google Search Console",
+        "Hardening de seguridad mediante CSP y headers HTTP"
+      ],
+      challenges: [
+        "Presentar información jurídica con claridad y una navegación accesible",
+        "Mantener una experiencia consistente en dispositivos móviles y de escritorio"
+      ]
+    }
+  },
   {
     slug: "michixo",
     name: "MichiXO",
